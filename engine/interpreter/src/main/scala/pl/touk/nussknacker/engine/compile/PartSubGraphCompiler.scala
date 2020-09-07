@@ -247,7 +247,7 @@ object PartSubGraphCompiler {
 
   }
 
-  private case class FieldExpressionTypingResult(fieldName: String, private val exprTypingResult: ExpressionTypingResult) {
+  case class FieldExpressionTypingResult(fieldName: String, private val exprTypingResult: ExpressionTypingResult) {
 
     def typingResult: TypingResult = exprTypingResult.typingResult
 
