@@ -5,7 +5,7 @@ import pl.touk.nussknacker.engine.api.deployment.ProcessActionType.ProcessAction
 import pl.touk.nussknacker.engine.api.deployment.simple.SimpleProcessStateDefinitionManager
 import pl.touk.nussknacker.engine.api.deployment.{CustomAction, ProcessActionType, ProcessStateDefinitionManager, StateStatus}
 
-object FlinkProcessStateDefinitionManager extends ProcessStateDefinitionManager  {
+class FlinkProcessStateDefinitionManager extends ProcessStateDefinitionManager  {
   val statusActionsMap: Map[StateStatus, List[ProcessActionType]] = Map(
     FlinkStateStatus.Restarting -> List(ProcessActionType.Cancel)
   )
