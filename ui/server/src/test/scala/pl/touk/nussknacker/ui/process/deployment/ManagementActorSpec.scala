@@ -174,7 +174,7 @@ class ManagementActorSpec extends FunSuite  with Matchers with PatientScalaFutur
   test("Should return state with error when state is restarting and process hasn't action") {
     val id = prepareProcess(processName).futureValue
 
-    val state = ProcessState("12", FlinkStateStatus.Restarting, Some(ProcessVersion.empty), FlinkProcessStateDefinitionManager)
+    val state = ProcessState("12", FlinkStateStatus.Restarting, Some(ProcessVersion.empty), new FlinkProcessStateDefinitionManager)
 
     processManager.withProcessState(Some(state)) {
       val state = jobStatusService.retrieveJobStatus(ProcessIdWithName(id, processName)).futureValue

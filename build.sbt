@@ -448,7 +448,7 @@ lazy val demo = (project in engine("demo")).
       )
     }
   )
-  .dependsOn(process % "runtime,test", kafkaFlinkUtil, flinkModelUtil, kafkaTestUtil % "test", flinkTestUtil % "test")
+  .dependsOn(process % "runtime,test", flinkProcessManager % "provided", interpreter % "provided", kafkaFlinkUtil, flinkModelUtil, kafkaTestUtil % "test", flinkTestUtil % "test", httpUtils)
 
 
 lazy val generic = (project in engine("flink/generic")).

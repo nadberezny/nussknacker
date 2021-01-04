@@ -139,5 +139,5 @@ abstract class FlinkProcessManager(modelData: ModelData, shouldVerifyBeforeDeplo
 
   protected def runProgram(processName: ProcessName, mainClass: String, args: List[String], savepointPath: Option[String]): Future[Unit]
 
-  override def processStateDefinitionManager: ProcessStateDefinitionManager = FlinkProcessStateDefinitionManager
+  override def processStateDefinitionManager: ProcessStateDefinitionManager = new FlinkProcessStateDefinitionManager
 }
