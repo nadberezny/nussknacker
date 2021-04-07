@@ -477,7 +477,10 @@ lazy val flinkManagementSample = (project in engine("flink/management/sample")).
         "javax.validation" % "validation-api" % javaxValidationApiV,
         "org.apache.flink" %% "flink-streaming-scala" % flinkV % "provided",
         "org.apache.flink" %% "flink-queryable-state-runtime" % flinkV % "test",
-        "org.apache.flink" %% "flink-runtime" % flinkV % "compile" classifier "tests"
+        "org.apache.flink" %% "flink-runtime" % flinkV % "compile" classifier "tests",
+        "com.zaxxer" % "HikariCP" % "4.0.3"
+//        ,
+//        "pl.touk.nussknacker" %% "sql-extensions" % "0.0.1-SNAPSHOT"
       )
     }
   ).

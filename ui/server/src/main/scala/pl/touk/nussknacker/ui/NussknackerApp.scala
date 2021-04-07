@@ -223,8 +223,9 @@ class NussknackerAppInitializer(baseConfig: Config) extends LazyLogging {
   protected val hsqlServer: Option[Server] = jdbcServerConfig.map(DatabaseServer(_))
 
   // TODO: switch to general configuration via application.conf when https://github.com/akka/akka-http/issues/55 will be ready
-  val interface: String = config.getString("http.interface")
-  val port: Int = config.getInt("http.port")
+  val interface: String = "localhost"
+//  val port: Int = config.getInt("http.port")
+  val port: Int = 8080
 
   def init(router: NusskanckerAppRouter): (Route, Iterable[AutoCloseable]) = {
     val db = initDb(config)
